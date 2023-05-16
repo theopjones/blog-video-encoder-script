@@ -8,6 +8,8 @@ The `videotemplate.html` file contains a template (HTML/Javascript/CSS) for a vi
 
 This template uses the HTML5 video attribute to play a video. Controls are enabled. The code supports the option for multiple resolutions, and allows switching between the resolutions. The Javascript controling this is able to detect if the user is running on a mobile browser. There is the ability to set a different default resolution   
 
+The `<video>` object will autoscale based on the size of the container that it is in, but this will not cause the resolution of the video to change without user intervention. 
+
 A screenshot of this widget is as follows. 
 
 ![](Screenshot_2023-05-16_14-58-52.png)
