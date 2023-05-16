@@ -27,6 +27,8 @@ This python script writes the following two items to the current working directo
 1. A set of encoded video files corresponding to the following resolutions 1080p, 720p, 480p, 360p, 240p, 144p
 2. A file named `videos.html` which containes a HTML file based on `videotemplate.html` which allows all of those encoded video files to be played in a browser.
 
+The output video files are in MP4 with H.264 and AAC.
+
 The `videos.html` file is set up to default to 480p for mobile browsers, and 720p video for all other browsers. 
 
 A mobile browser is any browser for which `navigator.userAgent` in Javascript contains any of the following strings `iPhone`, `iPad`, `iPod`, `Android`. 
