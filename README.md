@@ -33,6 +33,8 @@ The `videos.html` file is set up to default to 480p for mobile browsers, and 720
 
 A mobile browser is any browser for which `navigator.userAgent` in Javascript contains any of the following strings `iPhone`, `iPad`, `iPod`, `Android`. 
 
+The name of JS functions, and HTML IDs is randomized in order to make it possible for multiple copies of the code to exist on the same web page (ie. for something like a blog homepage).
+
 The bit rates of the encoded video files are as follows
 
 |       | Video   | Audio   |
