@@ -1,0 +1,63 @@
+<style>
+  #videoContainerRANDOM {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  #videoContainerRANDOM button, #videoContainerRANDOM a {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s;
+  }
+  #videoContainerRANDOM button:hover, #videoContainerRANDOM a:hover {
+      background-color: #666;
+  }
+  #videoContainerRANDOM button {
+      background-color: #333;
+  }
+  #videoContainerRANDOM a {
+      background-color: #999;
+  }
+  #myVideoRANDOM {
+      width: 100%;
+      height: auto;
+  }
+</style>
+
+<div id="videoContainerRANDOM">
+  <video id="myVideoRANDOM" controls>
+  Your browser does not support the video tag.
+  </video>
+  <br>
+  <br>
+
+  <fieldset>
+      <legend>Select Quality</legend>
+      BUTTONS_PLACEHOLDER
+  </fieldset>
+</div>
+
+<script>
+  function changeQualityRANDOM(quality) {
+  var video = document.getElementById('myVideoRANDOM');
+  video.src = quality;
+  video.load();
+  video.play();
+  }
+
+  // Detect mobile and set default quality
+  window.onload = function() {
+  var video = document.getElementById('myVideoRANDOM');
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+      video.innerHTML = '<source src="DEFAULT_MOBILE_SOURCE" type="video/mp4">';
+  } else {
+      video.innerHTML = '<source src="DEFAULT_DESKTOP_SOURCE" type="video/mp4">';
+  }
+  video.load();
+  }
+</script>
