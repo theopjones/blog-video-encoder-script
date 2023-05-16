@@ -4,7 +4,7 @@ This only requires a HTTPS server which stores the files, it does not use a vide
 
 # videotemplate.html
 
-The `videotemplate.html` file contains a template (HTML/Javascript/CSS) for a video player widget which is filled out by the `encoder.py` file. The completed HTML code can then be added to anouther website, or the HTML editor of a 
+The `videotemplate.html` file contains a template (HTML/Javascript/CSS) for a video player widget which is filled out by the `encoder.py` file. The completed HTML code can then be added to anouther website, or the HTML editor of a blogging engine. 
 
 This template uses the HTML5 video attribute to play a video. Controls are enabled. The code supports the option for multiple resolutions, and allows switching between the resolutions. The Javascript controling this is able to detect if the user is running on a mobile browser. There is the ability to set a different default resolution   
 
@@ -15,6 +15,8 @@ A screenshot of this widget is as follows.
 # encoder.py 
 
 The command line usage of this script is as follows `python3 script.py <input_file>`
+
+The script will also prompt for the URL (without https) where the videos will be hosted. This should be a domain name + a path (if needed) ie. `videofiles.example.com/VideoFilePath`. Once the encoding is complete, use your prefered method to upload the encoded files to the HTTPS server in the correct path. 
 
 FFmpeg needs to be installed, but any any corresponding python library. Otherwise, this script's only dependencies are in the Python standard library. 
 
