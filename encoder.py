@@ -52,7 +52,7 @@ for resolution, bitrate_video in resolutions.items():
     # Add button to buttons line
     buttons_line += f'\n<button style="margin-right: 10px;" onclick="changeQuality{rand_str}(\'https://{host_url}/{output_file}\')">{resolution}</button>'
 
-with open('videotemplate.html', 'r') as template_file:
+with open(os.path.dirname(__file__) + '/videotemplate.html', 'r') as template_file:
     template_content = template_file.read()
 
 # Replace placeholders in the template
