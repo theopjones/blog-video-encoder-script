@@ -40,7 +40,7 @@ The JavaScript in the widget generates the options for video resoloution plaback
 
 `<div class="videoContainer" data-base-url="https://example.com/myfolder/videofile" data-poster="https://example.com/myfolder/thumbnailimg.jpg">`
 
-`data-base-url="https://files.theopjones.blog/PhotoWalkMar242023/PhotoWalkMay25` is the URL of the video files minus the file extension and the resolution appended to the name of the files that `encoder.py` generates. Ie. If your input file's name to `encoder.py` was `videofile.mp4` and the path to the folder on your server where the videos are hosted is `https://example.com/myfolder` the `data-base-url` should be `https://example.com/myfolder/videofile`. `data-poster` should be the URL of the image used as a preview image/thumbnail of the video.
+`data-base-url` should be set to the URL of the video files minus the file extension and the resolution appended to the name of the files that `encoder.py` generates. Ie. If your input file's name to `encoder.py` was `videofile.mp4` and the path to the folder on your server where the videos are hosted is `https://example.com/myfolder` the `data-base-url` should be `https://example.com/myfolder/videofile`. `data-poster` should be the URL of the image used as a preview image/thumbnail of the video.
 
 This template uses the HTML5 video attribute to play a video. Controls are enabled. The code supports the option for multiple resolutions, and allows switching between the resolutions. 
 
