@@ -2,6 +2,8 @@ This repo contains scripts to quickly encode video and prepare HTML snippets for
 
 This only requires a HTTPS server which stores the files, it does not use a video hosting platform. This code is useful for self-hosting video files if you do not want to use a service like Youtube/Vimeo/Odyssey/etc to host a collection of long form video content for your blog or personal website, but you find full-featured self-hosted video platforms like Peertube/LBRY/MediaCMS/etc too bulky and heavy weight for your needs. 
 
+An example of a page created with the tools in this repo can be found at https://theopjones.blog/notes/2023/05/2023-05-26-rowxk
+
 # encoder.py 
 
 The command line usage of this script is as follows `python3 script.py <input_file>`
