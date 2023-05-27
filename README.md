@@ -48,7 +48,6 @@ A screenshot of this widget is as follows.
 
 ![](Screenshot_2023-05-16_14-58-52.png)
 
-
 Each video is contained within a `<div>` element with the class `videoContainer`. This div contains:
 
 - A `<video>` element with the class `myVideo`. This is the actual video player.
