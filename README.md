@@ -32,9 +32,9 @@ The bit rates of the encoded video files are as follows
 
 # videotemplate.html
 
-The `videotemplate.html` file contains a template (HTML/Javascript/CSS) for a video player widget. The completed HTML code can then be added to another website, or the HTML editor of a blogging engine. 
+The `videotemplate.html` file contains a template (HTML/Javascript/CSS) for a video player widget. The completed HTML code can then be added to another website, or the HTML editor of a blogging engine.The code is written to take into account multiple videos existing on the same web page, such as in the homepage of a blog where each post has a video. 
 
-The JavaScript in the widget generates the options for video resoloution plaback based on the value in the `<div>` on line 61
+The JavaScript in the widget generates the options for video resoloution plaback based on the value in the `<div>` on line 61. This is the only part of the code that needs to be modified on a per-video basis. 
 
 `<div class="videoContainer" data-base-url="https://example.com/myfolder/videofile" data-poster="https://example.com/myfolder/thumbnailimg.jpg">`
 
