@@ -48,13 +48,6 @@ A screenshot of this widget is as follows.
 
 ![](Screenshot_2023-05-16_14-58-52.png)
 
-# Video Player with Resolution Control
-
-This project is a custom HTML5 video player with resolution control. It uses a mix of HTML, CSS, and JavaScript to implement a video player interface that allows users to switch between different video resolutions. 
-
-## Overview
-
-### HTML
 
 Each video is contained within a `<div>` element with the class `videoContainer`. This div contains:
 
@@ -63,11 +56,7 @@ Each video is contained within a `<div>` element with the class `videoContainer`
 - A `<div>` element with the class `playButton`. This is a custom play button that overlays the video player.
 - A `<div>` element with the class `videoButtons`. This is a container for the resolution buttons that will be created by the JavaScript code.
 
-### CSS
-
 The CSS is used to style the video player, the play button, and the resolution buttons. The play button is positioned absolutely in the center of the video player except for a padding that makes it appear more centered to the eye given the shape of the play emoji, and the video player takes up 100% of the width of its container.
-
-### JavaScript
 
 The JavaScript code primarily interacts with the elements within each `.videoContainer`. The code is designed to work with multiple video containers on the same page.
 
