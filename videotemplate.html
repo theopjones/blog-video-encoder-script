@@ -1,10 +1,22 @@
+<!-- 
+Written in 2023 by Theodore Jones tjones2@fastmail.com 
+To the extent possible under law, the author(s) have dedicated all copyright 
+and related and neighboring rights to this software post to the public domain worldwide. 
+This software is distributed without any warranty. 
+http://creativecommons.org/publicdomain/zero/1.0/.
+-->
+
 <style>
-  #videoContainerRANDOM {
+    .videoContainer {
       display: flex;
       flex-direction: column;
       align-items: center;
-  }
-  #videoContainerRANDOM button, #videoContainerRANDOM a {
+      position: relative;
+      padding-top: 56.25%;  /* Aspect ratio for 16:9 */
+      height: 0;
+      overflow: hidden;
+    }
+    .videoContainer button, .videoContainer a {
       padding: 10px 15px;
       margin: 5px;
       border: none;
@@ -12,52 +24,111 @@
       color: white;
       text-decoration: none;
       transition: background-color 0.3s;
-  }
-  #videoContainerRANDOM button:hover, #videoContainerRANDOM a:hover {
+    }
+    .videoContainer button:hover, .videoContainer a:hover {
       background-color: #666;
-  }
-  #videoContainerRANDOM button {
+    }
+    .videoContainer button {
       background-color: #333;
-  }
-  #videoContainerRANDOM a {
-      background-color: #999;
-  }
-  #myVideoRANDOM {
+    }
+    .myVideo {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: auto;
-  }
+      height: 100%;
+    }
+    .playButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    color: black;
+    text-align: center;
+    background: white;
+    border-radius: 50%;
+    width: 84px;
+    height: 85px;
+    line-height: 90px;
+    padding-left: 11px; /* Add padding to the left side */
+    padding-bottom: 12px; /* Add padding to the left side */
+    cursor: pointer;
+}
 </style>
 
-<div id="videoContainerRANDOM">
-  <video id="myVideoRANDOM" controls>
-  Your browser does not support the video tag.
-  </video>
-  <br>
-  <br>
-
-  <fieldset>
-      <legend>Select Quality</legend>
-      BUTTONS_PLACEHOLDER
-  </fieldset>
-</div>
-
+  
+  <div class="videoContainer" data-base-url="https://files.theopjones.blog/PhotoWalkMar242023/PhotoWalkMay25" data-poster="https://files.theopjones.blog/PhotoWalkMar242023/photos/L1010499-1_thumbnail.jpg">
+    <video class="myVideo">
+      <source class="myVideoSource" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="playButton">&#9658;</div>
+    <div class="videoButtons"></div>
+  </div>
+  
 <script>
-  function changeQualityRANDOM(quality) {
-  var video = document.getElementById('myVideoRANDOM');
-  video.src = quality;
-  video.load();
-  video.play();
-  }
+  document.querySelectorAll('.videoContainer').forEach((videoContainer, index) => {
+    const randomStr = Math.random().toString(36).substring(7);
+    const myVideo = videoContainer.querySelector('.myVideo');
+    const myVideoSource = videoContainer.querySelector('.myVideoSource');
+    const playButton = videoContainer.querySelector('.playButton');
+    const videoButtons = videoContainer.querySelector('.videoButtons');
 
-  // Detect mobile and set default quality
-  window.onload = function() {
-  var video = document.getElementById('myVideoRANDOM');
-  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  if (isMobile) {
-      video.innerHTML = '<source src="DEFAULT_MOBILE_SOURCE" type="video/mp4">';
-  } else {
-      video.innerHTML = '<source src="DEFAULT_DESKTOP_SOURCE" type="video/mp4">';
-  }
-  video.load();
-  }
+    const baseUrl = videoContainer.getAttribute('data-base-url');
+    const posterUrl = videoContainer.getAttribute('data-poster');
+    const resolutions = ["144p", "240p", "360p", "480p", "720p", "1080p", "2160p"];
+
+    myVideo.id = `myVideo${randomStr}`;
+    myVideo.poster = posterUrl;
+    myVideoSource.id = `myVideoSource${randomStr}`;
+    playButton.id = `playButton${randomStr}`;
+
+    myVideo.onplaying = function() {
+      if(playButton){
+        playButton.style.display = 'none';
+      }
+    }
+
+    playButton.onclick = function() {
+      playVideo(myVideo.id, myVideoSource.id, `${baseUrl}_720p.mp4`);
+    };
+
+    resolutions.forEach((resolution) => {
+      if (!videoButtons.querySelector(`button[data-resolution="${resolution}"]`)) {
+        const button = document.createElement('button');
+        button.style.marginRight = '10px';
+        button.textContent = resolution;
+        button.setAttribute('data-resolution', resolution);
+        button.onclick = function() {
+          changeQuality(myVideo.id, myVideoSource.id, `${baseUrl}_${resolution}.mp4`);
+        };
+        videoButtons.appendChild(button);
+      }
+    });
+
+    function playVideo(videoId, sourceId, quality) {
+      var video = document.getElementById(videoId);
+      var source = document.getElementById(sourceId);
+      
+      source.src = quality;
+      video.load();
+      video.play();
+      
+      // Add the controls attribute back to the video when the play button is clicked
+      video.controls = true;
+    }
+
+    function changeQuality(videoId, sourceId, quality) {
+      var video = document.getElementById(videoId);
+      var source = document.getElementById(sourceId);
+
+      source.src = quality;
+      video.load();
+      video.play();
+
+      // Add the controls attribute back to the video when the play button is clicked
+      video.controls = true;
+    }
+  });
 </script>
