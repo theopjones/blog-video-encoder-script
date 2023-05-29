@@ -10,17 +10,11 @@ More information about the motivation here can be found at https://theopjones.bl
 
 The command line usage of this script is as follows `python3 script.py <input_file>`
 
-The script will also prompt for the URL (without https) where the videos will be hosted. This should be a domain name + a path (if needed) ie. `videofiles.example.com/VideoFilePath`. Once the encoding is complete, use your prefered method to upload the encoded files to the HTTPS server in the correct path. 
-
 FFmpeg needs to be installed, but any any corresponding python library. Otherwise, this script's only dependencies are in the Python standard library. 
 
-This python script writes the following to the current working directory: A set of encoded video files corresponding to the following resolutions 2160p, 1080p, 720p, 480p, 360p, 240p, 144p
+This python script writes the following to the current working directory: A set of encoded video files corresponding to the following resolutions 2160p, 1080p, 720p, 480p, 360p, 240p, 144p.
 
 The output video files are in MP4 with H.264 and AAC.
-
-A mobile browser is any browser for which `navigator.userAgent` in Javascript contains any of the following strings `iPhone`, `iPad`, `iPod`, `Android`. 
-
-The name of JS functions, and HTML IDs is randomized in order to make it possible for multiple copies of the code to exist on the same web page (ie. for something like a blog homepage).
 
 The bit rates of the encoded video files are as follows
 
