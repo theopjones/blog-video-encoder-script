@@ -8,7 +8,7 @@ More information about the motivation here can be found at https://theopjones.bl
 
 # encoder.py 
 
-The command line usage of this script is as follows `python3 script.py <input_file>`
+The command line usage of this script is as follows `python3 encoder.py <input_file>`
 
 FFmpeg needs to be installed, but any any corresponding python library. Otherwise, this script's only dependencies are in the Python standard library. 
 
