@@ -2,7 +2,11 @@ This repo contains scripts to quickly encode video and prepare HTML snippets for
 
 This only requires a HTTPS server which stores the files, it does not use a video hosting platform. This code is useful for self-hosting video files if you do not want to use a service like Youtube/Vimeo/Odyssey/etc to host a collection of long form video content for your blog or personal website, but you find full-featured self-hosted video platforms like Peertube/LBRY/MediaCMS/etc too bulky and heavy weight for your needs. 
 
-More information about the motivation here can be found at https://theopjones.blog/notes/2023/05/2023-05-28-ctnvp
+More information about the motivation here can be found below 
+
+I’ve been creating a workflow for self-hosted video, with the videos stored on a server running Apache, and Cloudflare Cache Reserve/R2 for mitigating to peaks of excess traffic to the server.
+
+This is because for some of my projects (namely my hobbyist photography work) I want to distribute playable video but without relying on centralized video hosts (Youtube etc), and a lot of the alternatives are not very streamlined (ie. ActivityPub/Fediverse systems like Peertube).
 
 # encoder.py 
 
